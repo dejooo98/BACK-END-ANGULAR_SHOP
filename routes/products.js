@@ -60,16 +60,15 @@ router.post(`/`, uploadOptions.single("image"), async (req, res) => {
     if (!category) return res.status(400).send("Invalid Category");
 
     const file = req.file;
-    if (!file) return res.status(400).send("Invalid File");
+    if (!file) return res.status(400).send("No image in the request");
 
     const fileName = file.filename;
     const basePath = `${req.protocol}://${req.get("host")}/public/uploads/`;
-
     let product = new Product({
         name: req.body.name,
         description: req.body.description,
         richDescription: req.body.richDescription,
-        image: `${basePath}${fileName}`,
+        image: `${basePath}${fileName}`, // "http://localhost:3000/public/upload/image-2323232"
         brand: req.body.brand,
         price: req.body.price,
         category: req.body.category,
