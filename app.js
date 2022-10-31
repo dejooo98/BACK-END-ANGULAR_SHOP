@@ -32,7 +32,11 @@ app.use(`${api}/orders`, ordersRouter);
 
 //konekcija za bazom mongo.db
 mongoose
-    .connect(process.env.CONNECTION_STRING)
+    .connect(process.env.CONNECTION_STRING, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        dbName: process.env.DB_NAME,
+    })
     .then(() => {
         console.log("Database connection is ready");
     })
@@ -40,7 +44,8 @@ mongoose
         console.log(err);
     });
 
+const PORT = process.env.PORT || 3000;
 //kreiranje porta za server
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Server is running http://localhost:3000");
 });
