@@ -1,5 +1,6 @@
 API_URL = /api/v1
-secret = 
-CONNECTION_STRING = 
+secret =
+CONNECTION_STRING =
 DB_NAME =
-PORT = 
+PORT =
+apibackend link: https://angular-ecommerce-backend.herokuapp.com/
