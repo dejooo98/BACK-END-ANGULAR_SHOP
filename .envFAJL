@@ -3,4 +3,4 @@ secret =
 CONNECTION_STRING =
 DB_NAME =
 PORT =
-apibackend link: https://angular-ecommerce-backend.herokuapp.com/
+apibackend link: back-end-angular-shop.vercel.app
